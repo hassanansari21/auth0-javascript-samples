@@ -121,6 +121,20 @@ window.onload = async () => {
       }
 
       console.log("Logged in!");
+      
+      (async () => {
+        debugger;
+        const token = await auth0Client.getTokenSilently({
+          authorizationParams: {
+            redirect_uri: window.location.origin + "/login",
+          },
+          detailedResponse: true,
+        });
+        alert(`token.id_token: ${token.id_token}`);
+      })().catch(e => {
+        debugger
+        alert(`Error: ${e}`);
+      })
     } catch (err) {
       console.log("Error parsing redirect:", err);
     }
