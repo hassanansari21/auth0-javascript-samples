@@ -1,10 +1,10 @@
 [build]
     base = "01-Login"
-    command = """if [ -z "${AUTH0_DOMAIN}" ] || [ -z "${AUTH0_CLIENT_ID}" ]; then
-            echo "Error: One or both environment variables (AUTH0_DOMAIN, AUTH0_CLIENT_ID) are not set or are empty."
+    command = """if [ -z "${dev-mituiaj1s31xz1zj.us.auth0.com}" ] || [ -z "${P9ShG9L67Og5cL3X5v1RXrOpvUTW7fm7}" ]; then
+            echo "Error: One or both environment variables (dev-mituiaj1s31xz1zj.us.auth0.com, P9ShG9L67Og5cL3X5v1RXrOpvUTW7fm7) are not set or are empty."
             exit 1
         fi
-        printf '{\"domain\":\"%s\", \"clientId\":\"%s\"}' "${AUTH0_DOMAIN}" "${AUTH0_CLIENT_ID}" > public/auth_config.json
+        printf '{\"domain\":\"%s\", \"clientId\":\"%s\"}' "${dev-mituiaj1s31xz1zj.us.auth0.com}" "${P9ShG9L67Og5cL3X5v1RXrOpvUTW7fm7}" > public/auth_config.json
         cp index.html public
     """
     publish = "public"
